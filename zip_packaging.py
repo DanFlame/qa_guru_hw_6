@@ -17,13 +17,4 @@ def all_into_one():
             print(file)
             add_file = path.join(resources_dir, file)
             print(add_file)
-            my_archive.write(add_file)
-
-
-def extraction_file_path(file_name):
-    current_dir = path.dirname(path.abspath(__file__))
-    resources_dir = path.join(current_dir, 'resources')
-    return path.join(resources_dir, file_name)[1:]
-
-
-all_into_one()
+            my_archive.write(add_file, path.basename(add_file))
